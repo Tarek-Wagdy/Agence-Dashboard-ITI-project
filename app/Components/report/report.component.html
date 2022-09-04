@@ -1,0 +1,41 @@
+<style>
+    .container {
+        margin-top: 50px;
+    }
+</style>
+
+
+<div class="container">
+  
+    {{errorMessage}}
+
+        
+    <table *ngIf="DisplayReports" class="table table-bordered">
+        <thead style="background-color:#75bef8;">
+            <tr>
+                <th>CarBrand </th>
+                <th>CarModel </th>
+                <th>CarAddress </th>
+                <th>User_FullName </th>
+                <th>User_Email </th>
+                <th>Report</th>
+                
+            </tr>
+        </thead>
+        <tbody style="background-color:#d3f1ff">
+            <tr *ngFor="let reports of reports ">
+                <td>{{reports.carBrand}}</td>
+                <td>{{reports.carModel}}</td>
+                <td>{{reports.carAddress}}</td>
+                <td>{{reports.user_FullName}}</td>
+                <td>{{reports.user_Email}}</td>
+                <td>{{reports.report}}</td>
+            
+               
+            </tr>
+           
+        </tbody>
+        
+    </table>
+
+</div>

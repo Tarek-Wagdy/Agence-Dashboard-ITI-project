@@ -1,0 +1,56 @@
+<style>
+    .container {
+        width: 30%;
+        border: 1px solid rgb(139, 183, 231);
+        border-radius: 20px;
+        margin-top: 200px;
+    }
+
+    input,
+    select {
+        border-radius: 15px;
+        
+    }
+
+    .form-group {
+        margin-top: 10px;
+    }
+
+    .btn {
+        background-color: rgb(139, 183, 231) !important;
+        border: rgb(139, 183, 231);
+        margin-left: 40%;
+        margin-bottom: 5px;
+    }
+</style>
+<div class="container">
+    <form #userForm="ngForm" novalidate (ngSubmit)="OnSubmit(model)">
+        <h2 style="text-align: center">Add Model</h2>
+        
+        <!-- Model Name -->
+        <div class="form-group">
+            <label>Model Name:</label>
+            <input class="form-control" type="text" required name="model_Name" #modelName="ngModel"
+                [(ngModel)]="model.model_Name" >
+        </div>
+        
+        <!-- Add Brand -->
+
+        <div class="form-group">
+            <!-- <button style="border-radius: 15px;" (click)="RenderValues()"> Add Brand</button> -->
+                  <label> Add Brand</label>
+            <select name="carBrand_Name"  #brand="ngModel" [(ngModel)]="model.carBrand_Name">
+                <option *ngFor="let brand of brands">
+                    {{brand.brandName}}
+                </option>
+            </select>
+        </div>
+ 
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Add Model">
+        </div>
+
+    </form>
+  
+</div>
+

@@ -1,0 +1,58 @@
+<style>
+    .container {
+        margin-top: 50px;
+    }
+</style>
+<div class="">
+    <br>
+    <h1>Pending Cars</h1>
+    <br>
+    <!-- <button (click)="RenderValues()">Display Pending Cars</button> <br> -->
+    
+    <table  class="table table-bordered" style="background-color:rgb(139, 183, 231) ;">
+        <thead>
+            <tr>
+                <th>Car_ID</th>
+                <th>UserName</th>
+                <th>Price</th>
+                <th>Mileage</th>
+                <th>Made_Year</th>
+                <th> Engine_Capacity </th>
+                <th>Transmission  </th>
+                <th>Car_Address  </th>
+                <th>Description  </th>
+                <th> Status </th>
+                <th> Brand-Name </th>
+                 <th> Model-Name </th>
+                 <th>Is-Approved </th>
+                 <th>car-image</th>
+                 <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody style="background-color:rgb(146, 154, 164)">
+            <tr *ngFor="let pendingcar of pendingcars">
+                <td>{{pendingcar.id}}</td>
+                <td>{{pendingcar.username}}</td>
+                <td>{{pendingcar.price}}</td>
+                <td>{{pendingcar.mileage}}</td>
+                <td>{{pendingcar.made_Year}}</td>
+                <td>{{pendingcar.engine_Capacity}}</td>
+                <td>{{pendingcar.transmission}}</td>
+                <td>{{pendingcar.car_Address}}</td>
+                <td>{{pendingcar.description}}</td>
+                <td>{{pendingcar.status}}</td>
+                <td>{{pendingcar.car_Brand_Name}}</td>
+                <td>{{pendingcar.car_Model_Name}}</td>
+                <td>{{pendingcar.is_Approved}}</td>
+                <td><a href="/displaycarimages/{{pendingcar.id}}"> DisplayImages</a></td>
+                <td><button class="btn btn-danger" (click)="approved(pendingcar)">Approve</button></td>
+                
+            </tr>
+             
+           
+        </tbody> 
+        <!-- <button (click)="Hidden()"> Hide Pending Cars </button> -->
+    </table>
+    
+
+</div>

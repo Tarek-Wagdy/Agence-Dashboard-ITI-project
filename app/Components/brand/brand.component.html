@@ -1,0 +1,30 @@
+
+<style>
+.container
+{
+margin-top:50px;
+}
+</style>
+
+<app-addbrand></app-addbrand>
+<div class="container"> 
+<button (click)="RenderValues()">Display All Brands</button> <br>
+{{errorMessage}}
+
+<table *ngIf="DisplayBrands" class="table table-bordered" style="background-color:rgb(139, 183, 231) ;">
+    <thead>
+        <tr>
+        <th>BrandName</th>
+        <th>BrandLogo</th>
+        </tr>
+    </thead>
+    <tbody style="background-color:rgb(146, 154, 164)">
+        <tr *ngFor="let brands of brands">
+            <td>{{brands.brandName}}</td>
+            <td><img width="100px" height="100px" [src]="brands.brandLogo" /></td>
+        </tr>
+    </tbody>
+    <button (click)="Hidden()">Hide All Brands</button>
+</table>
+
+</div>

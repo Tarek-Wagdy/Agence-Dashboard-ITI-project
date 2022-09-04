@@ -1,0 +1,42 @@
+<style>
+    .container {
+        margin-top: 50px;
+    }
+</style>
+<div class="">
+    <br>
+    <h1>Users</h1>
+    <br>
+    <table  class="table table-bordered" style="background-color:rgb(139, 183, 231) ;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Full_Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th> Address </th>
+                <th>Is_Active </th>
+                <th> Action</th>
+            </tr>
+        </thead>
+        <tbody style="background-color:rgb(146, 154, 164)">
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.phoneNumber}}</td>
+                <td>{{user.is_Active}}</td>
+                <td>
+                    <button class="btn btn-danger" style="margin-right:5px;" (click)="block(user)">{{user.is_Active===true?'Block':'Ublock'}}</button>
+                    <!-- <button class="btn btn-primary" (click)="unblock(user)">UnBlock</button> -->
+                </td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+</div>

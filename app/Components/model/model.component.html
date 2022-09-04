@@ -1,0 +1,28 @@
+<style>
+    .container {
+        margin-top: 50px;
+    }
+</style>
+<app-addmodel> </app-addmodel>
+<div class="container">
+    <button (click)="RenderValues()">Display All Models</button> <br> 
+    {{errorMessage}}
+    <table *ngIf="DisplayModels" class="table table-bordered" style="background-color:rgb(139, 183, 231) ;">
+        <thead>
+            <tr>
+                <th>Model Name</th>
+                <th>Brand Name</th>
+            </tr>
+        </thead>
+        <tbody style="background-color:rgb(146, 154, 164)">
+            <tr *ngFor="let model of models">
+                <td>{{model.model_Name}}</td>
+                <td>{{model.carBrand_Name}}</td>
+                
+            </tr>
+        </tbody>
+        <button (click)="Hidden()">Hide All Models</button>
+    </table>
+
+</div>
+

@@ -1,0 +1,93 @@
+
+
+<!-- <style>
+    .bg-dark
+    {
+        background-color: #0bf !important;
+        color: #fff !important;
+    }
+    .navbar-expand-sm 
+    {
+     color: #fff !important;
+    }
+    .navbar
+    {
+     color: #fff !important;
+    }
+</style> -->
+
+
+ <nav class="navbar navbar-expand-sm  bg-dark" >-  
+    <div class="container-fluid">
+        
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+
+                <ul class="navbar-nav ms-auto">
+                    <div *ngIf="authentication;then Auth; else unAuth"> </div>
+
+                    <ng-template #unAuth>
+                        <li class="nav-item">
+                            <a routerLink="/login-page">Login</a>&nbsp;&nbsp;
+                        </li> <br>
+                
+                        <li class="nav-item">
+                            <a routerLink="/register">Register</a>&nbsp;&nbsp;
+                        </li>
+                    </ng-template>
+
+                    <ng-template #Auth>
+                        <li class="nav-item">
+                            <a routerLink="#" (click)="logout()">logout</a>&nbsp;&nbsp;
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/brand">Brand</a>&nbsp;&nbsp;
+                        </li>
+                        
+                        
+                        <li class="nav-item">
+                            <a routerLink="/model">Model</a>&nbsp;&nbsp;
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a routerLink="/report"> Reports </a>&nbsp;&nbsp;
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a routerLink="/pending-cars"> Pending Cars </a>&nbsp;&nbsp;
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a routerLink="/users"> Users </a>&nbsp;&nbsp;
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://localhost:7390/sell" > Add Car </a>&nbsp;&nbsp;
+                        </li>
+                    </ng-template>
+                </ul>
+            </ul>
+           
+        </div>
+    </div>
+</nav>  
+
+<!-- <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a routerLink="/login">Login</a>&nbsp;&nbsp;</li>
+            <li><a routerLink="/register">Register</a>&nbsp;&nbsp;</li>
+            <li><a routerLink="/brand">Brand</a>&nbsp;&nbsp;</li>
+            <li><a routerLink="/model">Model</a>&nbsp;&nbsp;</li>
+            <li><a routerLink="/report"> Reports </a>&nbsp;&nbsp;</li>
+        </ul>
+    </div>
+</nav> -->
+
+<router-outlet> </router-outlet>
+
+
+

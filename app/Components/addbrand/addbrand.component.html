@@ -1,0 +1,51 @@
+
+<style>
+    .container {
+        width: 30%;
+        border: 1px solid rgb(139, 183, 231);
+        border-radius: 20px;
+        margin-top: 200px;
+    }
+
+    input,
+    select {
+        border-radius: 15px;
+    }
+
+    .form-group {
+        margin-top: 10px;
+    }
+
+    .btn {
+        background-color: rgb(139, 183, 231) !important;
+        border: rgb(139, 183, 231);
+        margin-left: 40%;
+        margin-bottom: 5px;
+    }
+</style>
+<div class="container">
+
+        <h2 style="text-align: center">Add Brand</h2>
+
+        <!-- Brand Name -->
+        <div class="form-group">
+            <label>Brand Name:</label>
+            <input class="form-control"type="text"required name="brandName"#brandName="ngModel" [(ngModel)]="brand.brandName" >
+        </div>
+
+        <!-- Add Logo -->
+        <div class="form-group">
+            
+            <button  (click)="inputClicked()" >Add Logo</button>
+            <input  accept="image/png, image/jpeg" value="Logoo" id="logo" (change)="getBrandFile($event)" hidden type="file"required name="brandLogo"  #brandLogo="ngModel" [(ngModel)]="brand.brandLogo" >
+            <div > <img width="100px" height="100px"  [src]="logoSource"> </div>
+        </div>
+
+        <div class="form-group">
+            <!-- <input type="submit" (click)="files"   class="btn btn-success" value="Add Brand" > -->
+            <button (click)="files" > Add Model </button>
+        </div>
+
+  
+</div>
+
